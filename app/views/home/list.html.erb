@@ -1,0 +1,21 @@
+<style>
+    body {
+        margin-top: 150px;
+    }
+</style>
+<div class="container" style="margin-top: 30px;" align="center">
+    
+    <h2>List</h2> <br />
+    <a href="/">Today</a> <br /><br />
+    
+    <table width="100%" style="border-top: 1.5px solid #FF6347; border-bottom: 1.5px solid red;">
+        <tr style="border-bottom :1.5px solid #FF6347; text-align: center;">
+            <td style="padding: 10px;">Title</td>
+        </tr>
+        <% @questions.each do |q| %>
+        <tr style="text-align: center;">
+            <td style="padding: 10px;"><a href="/memo_list/<%=q.id%>"><%= q.today %></a></td>
+        </tr>
+        <% end %>
+    </table>
+</div>
