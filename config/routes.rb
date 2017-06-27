@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :users
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'home/index'
+  
+  get '/users/edit' => 'devise/registrations#edit'
   
    post '/memo_create' => 'home#memo_create'
    

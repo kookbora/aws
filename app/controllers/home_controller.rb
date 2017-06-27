@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+  before_filter :authenticate_user!, :except => [:index]
   
   def index
     @time = Time.now.day
@@ -9,6 +10,9 @@ class HomeController < ApplicationController
 
   def memo_create
     memo = Memo.new
+    @memo = current_user.memos.build
+    memo.user_id = params[:user_id]
+    memo.email = params[:email]
     memo.content = params[:content]
     memo.image_url = params[:pic]
     
@@ -32,6 +36,7 @@ class HomeController < ApplicationController
     
     redirect_to :back
   end
+
   
   def list
     @questions = Question.all

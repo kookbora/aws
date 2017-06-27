@@ -6,6 +6,10 @@ gem 'fog', '~> 1.38'
 gem 'carrierwave'
 gem "fog-aws"
 gem 'mini_magick'
+gem 'devise'
+gem 'rolify'  
+gem 'authority'  
+gem 'rails_admin'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use sqlite3 as the database for Active Record

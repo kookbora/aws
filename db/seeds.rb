@@ -33,4 +33,7 @@ question = ["뇌구조를 적어볼까요. 머릿속에서 가장 크게, 중요
 각을 할까요?", "2달 후에 당신은 무엇을 이루었을까요?", "10년 후 당신은 어떤 사람이 되어있을까요?"]
 question.each do |q|
     Question.create(today: q)
+
+admin_user = User.create(email: 'admin@email.com', password: '123456')
+admin_user.add_role :admin
 end
